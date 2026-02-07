@@ -78,40 +78,48 @@ json
 d) Screenshots of all features
 1. Home Feed
 See posts, like, comment, pagination
-![alt text](image.png)
+![photo_5206499102022111362_y](https://github.com/user-attachments/assets/bc97bc24-3f8d-4a23-a2f3-5dc887f7d438)
 
-2. Login/Register screen
+
+3. Login/Register screen
 Login or create new account
-![alt text](image-1.png)
-![alt text](image-11.png)
+![photo_5206499102022111363_y](https://github.com/user-attachments/assets/3a3adc7a-b8a1-417f-b472-a6ec1ee997b5)
+![photo_5206499102022111366_y](https://github.com/user-attachments/assets/a9ee6394-b699-4a4d-a0b3-254e4953668f)
 
-3. Create post
+
+5. Create post
 Write post and click Post button
-![alt text](image-2.png)
-![alt text](image-12.png)
+![photo_5206499102022111364_y](https://github.com/user-attachments/assets/393f803b-2a78-450a-bcf9-64965b7a7627)
+![photo_5206499102022111365_w](https://github.com/user-attachments/assets/b2dd158e-4f44-48ba-9333-14fe1852c6fe)
 
-4. User Profile
+
+7. User Profile
 See avatar,  edit profile
-![alt text](image-3.png)
+![photo_5206499102022111357_y](https://github.com/user-attachments/assets/efa14f4a-0d86-419a-bb57-29d8d0802dfe)
 
 
-5. Edit profile form
+
+9. Edit profile form
 Change bio and save
-![alt text](image-9.png)
+![photo_5206499102022111360_w](https://github.com/user-attachments/assets/e7595735-5d30-412a-be46-64ca867f988d)
 
-6. Notifications
+
+11. Notifications
 See who liked/commented your posts
-![alt text](image-4.png)
-![alt text](image-7.png)
+![photo_5206499102022111358_y](https://github.com/user-attachments/assets/d40c5a7a-8abe-4940-93f7-aea18dab5454)
+![photo_5206499102022111359_y](https://github.com/user-attachments/assets/b0672169-ca65-49ee-8567-e3001aab2f86)
 
-7. Following feed
+
+13. Following feed
 Posts from people you follow
-![alt text](image-10.png)
-![alt text](image-8.png)
+![photo_5206499102022111367_w](https://github.com/user-attachments/assets/0f19ff9e-e497-429d-bc1d-c3501825ba43)
+![photo_5206499102022111361_y](https://github.com/user-attachments/assets/ae0b0431-8a18-438c-9876-ade6b02e9c06)
 
-8. Search users
+
+15. Search users
 Find users and click Follow
-![alt text](image-5.png)
+![photo_5206499102022111356_y](https://github.com/user-attachments/assets/29bf379a-3d99-4d71-8c43-8296b354eb50)
+
 
 GitHub repository
 https://github.com/katekime/WEB-Final_Sons-of-the-Mirage
