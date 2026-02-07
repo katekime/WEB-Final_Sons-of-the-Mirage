@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connectify</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="dark">
+  <div class="layout">
+
+    <aside class="left">
+      <div class="brand">
+        <div class="xlogo">C</div>
+      </div>
+
+      <nav class="nav">
+        <button class="navItem active" data-view="home" type="button"><span class="navIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span><span>Home</span></button>
+        <button class="navItem" data-view="notifications" type="button"><span class="navIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 7-3 7h18s-3 0-3-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 19a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span><span>Notifications</span></button>
+        <button class="navItem" data-view="profile" type="button"><span class="navIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21a8 8 0 1 0-16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/></svg>
+          </span><span>Profile</span></button>
+        <button class="navItem" data-view="following" type="button"><span class="navIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 11a4 4 0 1 0-8 0" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 8v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span><span>Following</span></button>
+      </nav>
+
+      <button id="openComposer" class="postBtn" type="button">Post</button>
+
+      <div class="meMini" id="meMini">
+        <div class="miniAvatar" id="miniAvatar"></div>
+        <div class="miniText">
+          <div class="miniName" id="miniName">Not logged</div>
+          <div class="miniUser muted" id="miniUser">—</div>
+        </div>
+        <button id="logoutBtn" class="iconBtn hidden" type="button" title="Logout">⎋</button>
+      </div>
+    </aside>
+
+    <main class="center">
+      <header class="centerHeader">
+        <div class="tabs">
+          <button class="tab active" id="tabForYou" type="button">For you</button>
+          <button class="tab" id="tabFollowing" type="button">Following</button>
+        </div>
+      </header>
+
+      <section id="authView" class="authCard hidden">
+        <h2>Sign in to Connectify</h2>
+        <p class="muted">Login or create account to access the feed.</p>
+
+        <div class="authTabs" role="tablist" aria-label="Authentication">
+          <button class="authTab active" id="authTabLogin" type="button" role="tab" aria-selected="true">Login</button>
+          <button class="authTab" id="authTabRegister" type="button" role="tab" aria-selected="false">Register</button>
+        </div>
+
+        <div class="authPanel">
+          <form id="loginForm" class="form" data-auth-panel="login">
+            <label class="field">
+              <span class="label">Email</span>
+              <input name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </label>
+            <label class="field">
+              <span class="label">Password</span>
+              <input name="password" type="password" placeholder="••••••••" autocomplete="current-password" required minlength="6" />
+            </label>
+            <button class="primary" type="submit">Login</button>
+          </form>
+
+          <form id="registerForm" class="form hidden" data-auth-panel="register">
+            <label class="field">
+              <span class="label">Username</span>
+              <input name="username" placeholder="username" autocomplete="username" required minlength="3" />
+            </label>
+            <label class="field">
+              <span class="label">Email</span>
+              <input name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </label>
+            <label class="field">
+              <span class="label">Password</span>
+              <input name="password" type="password" placeholder="••••••••" autocomplete="new-password" required minlength="6" />
+            </label>
+            <button class="primary" type="submit">Create account</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="composer" class="composer hidden">
+        <div class="composerRow">
+          <div class="miniAvatar big" id="composerAvatar"></div>
+          <textarea id="postText" maxlength="500" placeholder="What’s happening?"></textarea>
+        </div>
+        <div class="composerActions">
+          <div class="muted small">Max 500 chars</div>
+          <button id="postBtn" class="primary" type="button">Post</button>
+        </div>
+      </section>
+
+      <section class="feed" id="feed">
+        <div id="posts"></div>
+
+        <div class="pager">
+          <button id="prevPage" class="ghost" type="button">Prev</button>
+          <div class="muted small" id="pageInfo">—</div>
+          <button id="nextPage" class="ghost" type="button">Next</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="profileView">
+        <h3>Profile</h3>
+        <div id="profileCard" class="list">
+          <div class="muted small">Loading...</div>
+        </div>
+        <div class="profileActions" id="profileActions"></div>
+      </section>
+
+      <section class="card hidden" id="notificationsView">
+        <h3>Notifications</h3>
+        <p class="muted small" style="margin-top:-6px;">Activity summary (likes/comments) from recent posts.</p>
+        <div id="notificationsList" class="list"></div>
+      </section>
+    </main>
+
+    <aside class="right">
+      <div class="searchBox">
+        <input id="searchInput" placeholder="Search users by username..." />
+        <button id="searchBtn" class="ghost" type="button">Search</button>
+      </div>
+
+      <section class="card">
+        <h3>Search results</h3>
+        <div id="searchResults" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h3>Trends for you</h3>
+        <div id="trends" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h3>Today’s News</h3>
+        <div id="news" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h3>Who to follow</h3>
+        <div id="suggestions" class="list"></div>
+      </section>
+    </aside>
+
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
