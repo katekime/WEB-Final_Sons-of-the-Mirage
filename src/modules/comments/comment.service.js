@@ -12,7 +12,6 @@ async function addComment(userId, postId, text) {
   const comment = await Comment.create({ author: userId, post: postId, text });
   await Post.findByIdAndUpdate(postId, { $inc: { commentsCount: 1 } });
 
-  // Notify post author about the comment
   try {
     const post = await Post.findById(postId).select("author");
     if (post && post.author) {
@@ -23,7 +22,7 @@ async function addComment(userId, postId, text) {
         post: postId,
       });
     }
-  } catch (_) { /* notification failure should not break comment */ }
+  } catch (_) { }
 
   return comment;
 }
