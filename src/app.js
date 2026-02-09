@@ -13,7 +13,6 @@ const postRoutes = require("./modules/posts/post.routes");
 const followRoutes = require("./modules/follows/follow.routes");
 const feedRoutes = require("./modules/feed/feed.routes");
 const commentRoutes = require("./modules/comments/comment.routes.root");
-const adminRoutes = require("./modules/admin/admin.routes");
 const notificationRoutes = require("./modules/notifications/notification.routes");
 
 const app = express();
@@ -30,7 +29,6 @@ app.use("/api/posts", postRoutes);
 app.use("/api/follows", followRoutes);
 app.use("/api/feed", feedRoutes);
 app.use("/api/comments", commentRoutes);
-app.use("/api/admin", adminRoutes);
 app.use("/api/notifications", notificationRoutes);
 
 app.use(express.static(path.join(__dirname, "../frontend")));
