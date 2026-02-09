@@ -34,7 +34,6 @@ async function sendWelcomeEmail(to, username) {
   } catch (err) {
     console.error("[EMAIL] Failed to send welcome email to", to);
     console.error("[EMAIL]", err.message);
-    // Don't throw — email failure should not block registration
   }
 }
 
